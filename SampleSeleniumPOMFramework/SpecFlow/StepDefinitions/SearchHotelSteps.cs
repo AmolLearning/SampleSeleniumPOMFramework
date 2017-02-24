@@ -4,6 +4,8 @@ using SampleSeleniumPOMFramework.Common;
 using SampleSeleniumPOMFramework.PageRepository;
 using SeleniumUtilities;
 using System.Threading;
+using NUnit.Framework;
+using OpenQA.Selenium;
 
 namespace SampleSeleniumPOMFramework.SpecFlow.StepDefinitions
 {
@@ -32,7 +34,7 @@ namespace SampleSeleniumPOMFramework.SpecFlow.StepDefinitions
         public void GivenEnterTheDestination()
         {
             DriverUtil.NavigateToURL(AppNameHelper.appBaseURL);
-            Thread.Sleep(2000);
+          
             NavigateTo.HotelPg.EnterLocation("Moscow, Russia");
             
         }
@@ -55,7 +57,8 @@ namespace SampleSeleniumPOMFramework.SpecFlow.StepDefinitions
         [Then(@"the options for entered destination should be displayed on the screen")]
         public void ThenTheOptionsForEnteredDestinationShouldBeDisplayedOnTheScreen()
         {
-            Console.WriteLine("Done");
+            string actualLocation = DriverUtil.GetText(By.CssSelector("span[class='captext ellipsis go-right']"));
+            Assert.AreEqual("Moscow, Russia", actualLocation);
         }
     }
 }

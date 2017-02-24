@@ -12,7 +12,7 @@ namespace SampleSeleniumPOMFramework.Common
 
     
           
-        private IEnumerable<String[]> SearchTerms()
+        private IEnumerable<String[]> SearchTermsFromCSV()
         {
             using (var csv = new CsvReader(new StreamReader(@"Data\SearchTerms.csv"), true))
             {
