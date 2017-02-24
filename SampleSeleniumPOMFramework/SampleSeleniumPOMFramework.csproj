@@ -102,6 +102,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="SpecFlow\Features\SearchHotel.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchHotel.feature</DependentUpon>
+    </Compile>
+    <Compile Include="SpecFlow\StepDefinitions\SearchHotelSteps.cs" />
     <Compile Include="SpecFlow\StepDefinitions\SearchSteps.cs" />
     <Compile Include="Tests\SampleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +123,10 @@
     <None Include="SpecFlow\Features\Search.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Search.feature.cs</LastGenOutput>
+    </None>
+    <None Include="SpecFlow\Features\SearchHotel.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>SearchHotel.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
