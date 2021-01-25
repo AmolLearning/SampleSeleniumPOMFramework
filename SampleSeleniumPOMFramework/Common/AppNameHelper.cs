@@ -17,7 +17,7 @@ using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Threading;
 using OpenQA.Selenium.PhantomJS;
-using SeleniumUtilities;
+
 
 namespace SampleSeleniumPOMFramework.Common
 {

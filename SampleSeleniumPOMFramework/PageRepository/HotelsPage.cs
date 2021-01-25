@@ -9,7 +9,6 @@ using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.IE;
 using SampleSeleniumPOMFramework.Common;
 using System.Threading;
-using SeleniumUtilities;
 
 namespace SampleSeleniumPOMFramework.PageRepository
 {

@@ -2,7 +2,6 @@
 using TechTalk.SpecFlow;
 using SampleSeleniumPOMFramework.Common;
 using SampleSeleniumPOMFramework.PageRepository;
-using SeleniumUtilities;
 using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
@@ -17,7 +16,7 @@ namespace SampleSeleniumPOMFramework.SpecFlow.StepDefinitions
         [BeforeFeature]
         static public void Setup()
         {
-            DriverUtil.Setup();
+            DriverUtil.LaunchBrowser();
 
         }
 

@@ -1,6 +1,5 @@
 ﻿using System;
 using NUnit.Framework;
-using SeleniumUtilities;
 using SampleSeleniumPOMFramework.PageRepository;
 using SampleSeleniumPOMFramework.Common;
 using OpenQA.Selenium;
@@ -17,7 +16,7 @@ namespace SampleSeleniumPOMFramework
         //[SetUp]
         public void Setup()
         {
-            DriverUtil.Setup();
+            DriverUtil.LaunchBrowser();
             
         }
 
