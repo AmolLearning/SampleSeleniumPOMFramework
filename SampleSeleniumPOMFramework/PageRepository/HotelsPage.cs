@@ -33,6 +33,8 @@ namespace SampleSeleniumPOMFramework.PageRepository
         [FindsBy(How = How.Id, Using = "adults")]
         public IWebElement drpAdults;
 
+   
+
         [FindsBy(How = How.Name, Using = "child")]
         public IWebElement drpChild;
 

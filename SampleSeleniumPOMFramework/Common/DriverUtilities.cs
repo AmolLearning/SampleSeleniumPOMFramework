@@ -25,38 +25,17 @@ using System.Security;
 //using Protractor;
 
 namespace SampleSeleniumPOMFramework.Common
-{   /// <summary>
-    /// This class has some reusable methods for interacting with UI 
-    /// </summary>
-    /// 
-
-    //class Logger
-    //{
-    //    //static public NLog.Logger Log = LogManager.GetLogger(TestContext.CurrentContext.Test.FullName);
-
-    //    static public NLog.Logger Log
-    //    {
-    //        get { return LogManager.GetLogger(TestContext.CurrentContext.Test.FullName); }
-
-    //    }
-    //}
+{   
     public class DriverUtilities
     {
 
-        //static public string baseURL = ConfigurationManager.AppSettings["Environment"];
-        // static public string baseURL = "https://google.com";
-        //static public string stateCode = ConfigurationManager.AppSettings["stateCode"];
-        //static public string stateName = ConfigurationManager.AppSettings["stateName"];
+        
         static public string browser = ConfigurationManager.AppSettings["browser"].ToLower();
 
 
         static private bool acceptNextAlert = true;
         static public IWebDriver driver;
-        //static public NgWebDriver ngDriver;
-
-        //static public NgWebDriver ngWebDriver= new NgWebDriver(driver);
-        //static public Actions ActBuilder;
-
+        
         //static public string dateTimeStamp = DateTime.Now.ToString("yyyy-MM-dd HH. mm.ss");
         /// <summary>
         /// This method returns the current dateTimeStamp
@@ -878,72 +857,8 @@ namespace SampleSeleniumPOMFramework.Common
             return converted;
             #endregion
         }
-        //loma
-        /// <summary>
-        /// This method is used to take and save a screenshot @ custom location
-        /// </summary>
-        /// <param name="screnshotPath"></param>
-        /// <returns></returns>
-        //static public string TakeScreenshot(string screnshotPath)
-        //{
+        
 
-        //    ////Folder Name for saving screenshots
-        //    //string screenshotFolderName = "Screenshots " + DateTime.Now.ToString("yyyy_MM_dd");
-
-        //    ////Directory path for saving screenshots
-        //    //string directoryPath = @"..\..\..\" + screenshotFolderName;
-
-
-        //    //if (Directory.Exists(directoryPath) == false)
-        //    //{
-        //    //    DirectoryInfo di = Directory.CreateDirectory(directoryPath);
-
-        //    //}
-
-        //    ////Screenshot path for returning the complete screenshot URL with its name
-        //    //string screnshotPath = Path.Combine(Directory.GetCurrentDirectory(), directoryPath + @"\");
-
-        //    string tcName = TestContext.CurrentContext.Test.Name.Replace('"', '\'').Replace(";", "-").Replace("/", "_");
-
-        //    int tcNameLength = TestContext.CurrentContext.Test.Name.Replace('"', '\'').Replace(";", "-").Replace("/", "_").Length;
-
-        //    if (tcNameLength > 50)
-        //    {
-        //        tcName = tcName.Substring(0, 50) + "...";
-        //    }
-
-
-        //    //Take Screenshot and save it @ specified location
-        //    #region TakeScreenshotAndSaveIt
-
-
-        //    ITakesScreenshot screenshotDriver = driver as ITakesScreenshot;
-
-        //    Screenshot screenshot = screenshotDriver.GetScreenshot();
-
-        //    String fp = screnshotPath + tcName + "Screenshot" + "_" + DateTime.Now.ToString("yyyy_MM_dd_hh_mm_ss_tt") + ".png";
-
-        //    screenshot.SaveAsFile(fp, ImageFormat.Png);
-
-        //    #endregion
-
-        //    #region Return screenshot path
-
-
-        //    string machineName = System.Environment.MachineName.ToString();
-        //    string fpWithHostName = "\\\\" + machineName + "\\" + fp;
-
-        //    var uri = new System.Uri(fpWithHostName);
-        //    var converted = uri.AbsoluteUri.Replace("/", "\\");
-        //    return converted;
-        //    #endregion
-        //}
-        //List and collection related methods
-
-        /// <summary>
-        /// This method simultates "driver.findElements" and is useful to get collection
-        /// </summary>
-        /// <param name="locator"></param>
         #region CollectionRelatedMethods
         static public List<IWebElement> GetCollection(By locator)
         {
@@ -1333,8 +1248,7 @@ namespace SampleSeleniumPOMFramework.Common
 
             table.FindElement(By.XPath("//tbody/tr[" + rowIndex + "]/td[" + colIndex + "]")).Click();
 
-            //DriverUtil.driver.FindElement(By.XPath("//tr[td[contains(text(),'W695')]]")).Click();
-            //DriverUtil.driver.FindElement(By.CssSelector("td:contains('W695')")).Click();
+           
             //loma
         }
         /// <summary>
@@ -1362,19 +1276,7 @@ namespace SampleSeleniumPOMFramework.Common
 
         }
 
-        /// <summary>
-        /// Prints the items in List of string items
-        /// </summary>
-        /// <param name="listName"></param>
-        static public void PrintStringList(List<string> listName)
-        {
-            foreach (string item in listName)
-            {
-                Console.WriteLine(item);
-
-            }
-
-        }
+      
 
         /// <summary>
         /// Used to switch to SharePoint dlg
@@ -1573,6 +1475,21 @@ namespace SampleSeleniumPOMFramework.Common
             }
         }
 
+
+        static public void ClickOnElementUsingJavaScript(IWebElement element)
+        {
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
+            jse.ExecuteScript("arguments[0].click();", element);
+
+        }
+
+
+        static public void ScrollToElementUsingJavaScript(IWebElement element)
+        {
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
+            jse.ExecuteScript("arguments[0].scrollIntoView(true);", element);
+
+        }
     }
 
 

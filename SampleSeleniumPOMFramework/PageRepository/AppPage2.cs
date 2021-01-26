@@ -27,6 +27,11 @@ namespace SampleSeleniumPOMFramework.PageRepository
         [FindsBy(How = How.ClassName, Using = "ms-srch-sb-searchLink")]
         public IWebElement imgSearch;
 
+        [FindsBy(How = How.XPath, Using = "//button[text()='Register']")]
+        public IWebElement btnRegister;
+
+
+
         public void ClickOnSearch()
         {
             imgSearch.Click();

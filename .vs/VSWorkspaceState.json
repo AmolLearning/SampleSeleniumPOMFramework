@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\SampleSeleniumPOMFramework",
+    "\\SampleSeleniumPOMFramework\\API",
     "\\SampleSeleniumPOMFramework\\Tests"
   ],
   "SelectedNode": "\\SampleSeleniumPOMFramework\\SampleSeleniumPOMFramework.sln",

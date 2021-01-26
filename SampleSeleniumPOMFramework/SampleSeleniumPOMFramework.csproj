@@ -47,6 +47,9 @@
       <HintPath>..\References\all\LumenWorks.Framework.IO.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>packages\NLog.4.7.7\lib\net45\NLog.dll</HintPath>
     </Reference>
@@ -98,6 +101,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="API\Sample.cs" />
     <Compile Include="API\APICommon.cs" />
     <Compile Include="Common\AppNameHelper.cs" />
     <Compile Include="Common\DriverUtil.cs" />
@@ -122,6 +126,7 @@
     </Compile>
     <Compile Include="SpecFlow\StepDefinitions\SearchHotelSteps.cs" />
     <Compile Include="SpecFlow\StepDefinitions\SearchSteps.cs" />
+    <Compile Include="Tests\TechTest.cs" />
     <Compile Include="Tests\SampleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
